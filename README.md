@@ -15,7 +15,7 @@ A box is chosen at random, and a coin is drawn from the selected box. The questi
 ### Mathematical Framework
 Using Bayes' Theorem, we calculate the conditional probability:
 
-$$ P(G_2 | G_1) = \frac{P(G_1 | G_2) \cdot P(G_2)}{P(G_1)} $$
+$$P(G_2 | G_1) = \frac{P(G_1 | G_2) \cdot P(G_2)}{P(G_1)}$$
 
 Where:
 - $G_1$: The event that the drawn coin is gold.
@@ -24,35 +24,35 @@ Where:
 #### Step-by-Step Calculation:
 1. **Prior Probabilities:**
    Each box is equally likely to be chosen:
-   $$ P(A) = P(B) = P(C) = \frac{1}{3} $$
+   $$P(A) = P(B) = P(C) = \frac{1}{3}$$
 
 2. **Likelihood of Drawing a Gold Coin Given a Box:**
    - For Box A (two gold coins):
-     $$ P(G_1 | A) = 1 $$
+     $$P(G_1 | A) = 1$$
    - For Box B (one gold, one silver coin):
-     $$ P(G_1 | B) = \frac{1}{2} $$
+     $$P(G_1 | B) = \frac{1}{2}$$
    - For Box C (two silver coins):
-     $$ P(G_1 | C) = 0 $$
+     $$P(G_1 | C) = 0$$
 
 3. **Total Probability of Drawing a Gold Coin:**
    By the law of total probability:
-   $$ P(G_1) = P(G_1 | A) \cdot P(A) + P(G_1 | B) \cdot P(B) + P(G_1 | C) \cdot P(C) $$
+   $$P(G_1) = P(G_1 | A) \cdot P(A) + P(G_1 | B) \cdot P(B) + P(G_1 | C) \cdot P(C)$$
    Substituting the values:
-   $$ P(G_1) = (1 \cdot \frac{1}{3}) + (\frac{1}{2} \cdot \frac{1}{3}) + (0 \cdot \frac{1}{3}) $$
-   $$ P(G_1) = \frac{1}{3} + \frac{1}{6} + 0 = \frac{1}{2} $$
+   $$P(G_1) = (1 \cdot \frac{1}{3}) + (\frac{1}{2} \cdot \frac{1}{3}) + (0 \cdot \frac{1}{3})$$
+   $$P(G_1) = \frac{1}{3} + \frac{1}{6} + 0 = \frac{1}{2}$$
 
 4. **Conditional Probability Calculation:**
    Using Bayes' Theorem:
-   $$ P(G_2 | G_1) = \frac{P(G_1 | G_2) \cdot P(G_2)}{P(G_1)} $$
+   $$P(G_2 | G_1) = \frac{P(G_1 | G_2) \cdot P(G_2)}{P(G_1)}$$
    - For Box A:
-     $$ P(G_2 | G_1, A) = 1 $$
+     $$P(G_2 | G_1, A) = 1$$
    - For Box B:
-     $$ P(G_2 | G_1, B) = \frac{1}{2} $$
+     $$P(G_2 | G_1, B) = \frac{1}{2}$$
    - For Box C:
-     $$ P(G_2 | G_1, C) = 0 $$
+     $$P(G_2 | G_1, C) = 0$$
 
    Substituting values:
-   $$ P(G_2 | G_1) = \frac{(1 \cdot \frac{1}{3})}{\frac{1}{2}} = \frac{2}{3}$$
+   $$P(G_2 | G_1) = \frac{(1 \cdot \frac{1}{3})}{\frac{1}{2}} = \frac{2}{3}$$
 
 #### Key Insights:
 - The probability of the second coin being gold given that the first coin is gold is $$ \frac{2}{3} $$.
@@ -61,17 +61,17 @@ Where:
 ### Additional Considerations:
 - **Expected Values:**
   The expected value of gold coins drawn can also be calculated:
-  $$ E[Gold] = P(A) \cdot 2 + P(B) \cdot 1 + P(C) \cdot 0 $$
+  $$E[Gold] = P(A) \cdot 2 + P(B) \cdot 1 + P(C) \cdot 0$$
   Substituting values:
-  $$ E[Gold] = (\frac{1}{3} \cdot 2) + (\frac{1}{3} \cdot 1) + (\frac{1}{3} \cdot 0) = \frac{2}{3} + \frac{1}{3} = 1 $$
+  $$E[Gold] = (\frac{1}{3} \cdot 2) + (\frac{1}{3} \cdot 1) + (\frac{1}{3} \cdot 0) = \frac{2}{3} + \frac{1}{3} = 1$$
 
 - **Variance of Gold Coins Drawn:**
   To compute the variance:
-  $$ \text{Var}(Gold) = E[Gold^2] - (E[Gold])^2 $$
+  $$\text{Var}(Gold) = E[Gold^2] - (E[Gold])^2$$
   Where:
-  $$ E[Gold^2] = P(A) \cdot 2^2 + P(B) \cdot 1^2 + P(C) \cdot 0^2 $$
-  $$ E[Gold^2] = (\frac{1}{3} \cdot 4) + (\frac{1}{3} \cdot 1) + (\frac{1}{3} \cdot 0) = \frac{4}{3} + \frac{1}{3} = \frac{5}{3} $$
-  $$ \text{Var}(Gold) = \frac{5}{3} - 1^2 = \frac{5}{3} - 1 = \frac{2}{3} $$
+  $$E[Gold^2] = P(A) \cdot 2^2 + P(B) \cdot 1^2 + P(C) \cdot 0^2$$
+  $$E[Gold^2] = (\frac{1}{3} \cdot 4) + (\frac{1}{3} \cdot 1) + (\frac{1}{3} \cdot 0) = \frac{4}{3} + \frac{1}{3} = \frac{5}{3}$$
+  $$\text{Var}(Gold) = \frac{5}{3} - 1^2 = \frac{5}{3} - 1 = \frac{2}{3}$$
 
 ## Folder Structure
 ```

@@ -1,7 +1,5 @@
 # statistical-simulation-bertrands-box-paradox
 
-# Bertrand's Box Paradox Simulation
-
 ## Project Overview
 This project simulates the Bertrand's Box Paradox, a classic probability puzzle that challenges intuitive reasoning. The paradox is as follows:
 

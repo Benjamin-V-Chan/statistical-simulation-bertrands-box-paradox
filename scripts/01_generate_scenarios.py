@@ -1,10 +1,25 @@
-# Import necessary modules
-# Define the box setups for the Bertrand's box paradox:
-# - Box A: Two gold coins.
-# - Box B: One gold coin and one silver coin.
-# - Box C: Two silver coins.
-# Define a function to generate all possible scenarios for choosing a box and coin.
-# - Randomly select a box with equal probability.
-# - Randomly select a coin from the selected box.
-# - Return the box and coin choice.
-# Save scenarios for later use.
+import random
+import csv
+
+def generate_scenarios():
+    boxes = {
+        "A": ["Gold", "Gold"],
+        "B": ["Gold", "Silver"],
+        "C": ["Silver", "Silver"]
+    }
+    scenarios = []
+    for _ in range(10000):
+        box = random.choice(list(boxes.keys()))
+        coin = random.choice(boxes[box])
+        scenarios.append({"box": box, "coin": coin})
+    return scenarios
+
+def save_scenarios(scenarios, filepath="outputs/scenarios.csv"):
+    with open(filepath, "w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=["box", "coin"])
+        writer.writeheader()
+        writer.writerows(scenarios)
+
+if __name__ == "__main__":
+    scenarios = generate_scenarios()
+    save_scenarios(scenarios)
